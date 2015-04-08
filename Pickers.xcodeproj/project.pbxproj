@@ -18,6 +18,7 @@
 		A692EA041AD4C29100276D9D /* DoubleComponentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A692EA031AD4C29100276D9D /* DoubleComponentPickerViewController.swift */; };
 		A692EA061AD4C2A500276D9D /* DependentComponentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A692EA051AD4C2A500276D9D /* DependentComponentPickerViewController.swift */; };
 		A692EA081AD4C2B300276D9D /* CustomPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A692EA071AD4C2B300276D9D /* CustomPickerViewController.swift */; };
+		A692EA0A1AD5069800276D9D /* statedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = A692EA091AD5069800276D9D /* statedictionary.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A692EA031AD4C29100276D9D /* DoubleComponentPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleComponentPickerViewController.swift; sourceTree = "<group>"; };
 		A692EA051AD4C2A500276D9D /* DependentComponentPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentComponentPickerViewController.swift; sourceTree = "<group>"; };
 		A692EA071AD4C2B300276D9D /* CustomPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerViewController.swift; sourceTree = "<group>"; };
+		A692EA091AD5069800276D9D /* statedictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statedictionary.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		A692E9DC1AD4BAA100276D9D /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				A692EA091AD5069800276D9D /* statedictionary.plist */,
 				A692E9DF1AD4BAA100276D9D /* AppDelegate.swift */,
 				A692E9E11AD4BAA100276D9D /* ViewController.swift */,
 				A692E9E31AD4BAA100276D9D /* Main.storyboard */,
@@ -209,6 +212,7 @@
 			files = (
 				A692E9E51AD4BAA100276D9D /* Main.storyboard in Resources */,
 				A692E9EA1AD4BAA100276D9D /* LaunchScreen.xib in Resources */,
+				A692EA0A1AD5069800276D9D /* statedictionary.plist in Resources */,
 				A692E9E71AD4BAA100276D9D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
