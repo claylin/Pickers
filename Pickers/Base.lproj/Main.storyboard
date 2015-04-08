@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5DL-oc-h58">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Single-->
@@ -61,13 +62,50 @@
                     <view key="view" contentMode="scaleToFill" id="ipM-Qd-txH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmi-CM-DeJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qpX-Fw-RfS" id="64K-VK-hoh"/>
+                                    <outlet property="delegate" destination="qpX-Fw-RfS" id="gVS-TM-r0L"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KP-c3-QL3">
+                                <rect key="frame" x="279" y="234" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.47713487750251704" green="1" blue="0.28643410907609057" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sri-2X-Y0b">
+                                <rect key="frame" x="285" y="338" width="31" height="30"/>
+                                <state key="normal" title="Spin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="spin:" destination="qpX-Fw-RfS" eventType="touchUpInside" id="I6w-rs-R7d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Gmi-CM-DeJ" secondAttribute="centerX" id="HF4-b3-uZD"/>
+                            <constraint firstItem="3KP-c3-QL3" firstAttribute="top" secondItem="Gmi-CM-DeJ" secondAttribute="bottom" constant="72" id="WJv-tf-LuP"/>
+                            <constraint firstAttribute="centerX" secondItem="3KP-c3-QL3" secondAttribute="centerX" id="Xoy-sZ-83u"/>
+                            <constraint firstAttribute="centerX" secondItem="Sri-2X-Y0b" secondAttribute="centerX" id="n5R-jv-wFx"/>
+                            <constraint firstItem="Gmi-CM-DeJ" firstAttribute="top" secondItem="ipM-Qd-txH" secondAttribute="topMargin" id="vo4-t5-NHE"/>
+                            <constraint firstItem="Sri-2X-Y0b" firstAttribute="top" secondItem="Gmi-CM-DeJ" secondAttribute="bottom" constant="176" id="zsZ-ba-mDp"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Custom" image="toolicon" id="iyC-mt-GgR"/>
+                    <connections>
+                        <outlet property="button" destination="Sri-2X-Y0b" id="gc6-rQ-efL"/>
+                        <outlet property="picker" destination="Gmi-CM-DeJ" id="OGW-aq-V3C"/>
+                        <outlet property="winLabel" destination="3KP-c3-QL3" id="ia2-BG-Wef"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZI-Xu-7BY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="903"/>
+            <point key="canvasLocation" x="-101" y="851"/>
         </scene>
         <!--Dependent-->
         <scene sceneID="jfa-bN-ooy">
@@ -113,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p51-7M-ZAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="1158"/>
+            <point key="canvasLocation" x="-160" y="904"/>
         </scene>
         <!--Date-->
         <scene sceneID="MaR-h8-uWW">
@@ -164,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDU-q7-2dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="142"/>
+            <point key="canvasLocation" x="-110" y="995"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0AT-qD-oG6">
@@ -232,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szR-ff-1fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="462"/>
+            <point key="canvasLocation" x="-126" y="936"/>
         </scene>
     </scenes>
     <resources>
