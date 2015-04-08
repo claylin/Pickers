@@ -65,6 +65,15 @@ class DependentComponentPickerViewController: UIViewController, UIPickerViewDele
             dependentPicker.selectRow(0, inComponent: zipComponent, animated: true)
         }
     }
+    
+    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        let pickerWidth = pickerView.bounds.size.width
+        if component == zipComponent {
+            return pickerWidth/3
+        } else {
+            return 2 * pickerWidth/3
+        }
+    }
 
     @IBAction func buttonPressed(sender: AnyObject) {
         let stateRow = dependentPicker.selectedRowInComponent(stateComponent)
