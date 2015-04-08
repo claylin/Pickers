@@ -15,9 +15,36 @@
                     <view key="view" contentMode="scaleToFill" id="frh-2l-AEg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0z-aQ-hu9">
+                                <rect key="frame" x="140" y="0.0" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jBz-N8-xNl" id="Up7-Ze-CaR"/>
+                                    <outlet property="delegate" destination="jBz-N8-xNl" id="ytf-1Y-lF5"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1F-xW-ian">
+                                <rect key="frame" x="277" y="285" width="43" height="30"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="jBz-N8-xNl" eventType="touchUpInside" id="r8j-2Y-Pq0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r1F-xW-ian" firstAttribute="top" secondItem="n0z-aQ-hu9" secondAttribute="bottom" constant="123" id="O9c-h2-Uzr"/>
+                            <constraint firstAttribute="centerX" secondItem="r1F-xW-ian" secondAttribute="centerX" constant="1.5" id="RXk-hq-yqY"/>
+                            <constraint firstAttribute="centerX" secondItem="n0z-aQ-hu9" secondAttribute="centerX" id="k6h-YE-cHu"/>
+                            <constraint firstItem="n0z-aQ-hu9" firstAttribute="top" secondItem="fqD-Zt-9rS" secondAttribute="bottom" constant="-20" id="yCQ-Se-cC0"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Single" image="singleicon" id="wsm-Yu-fUE"/>
+                    <connections>
+                        <outlet property="singlePicker" destination="n0z-aQ-hu9" id="PsJ-Ti-Kd8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeE-7k-4At" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,13 +172,40 @@
                     <view key="view" contentMode="scaleToFill" id="Qyf-Te-aZx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoU-rc-XKc">
+                                <rect key="frame" x="277" y="292" width="43" height="30"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="xKO-8D-FLY" eventType="touchUpInside" id="dhD-xd-qzd"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grH-5C-SG3">
+                                <rect key="frame" x="0.0" y="20" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xKO-8D-FLY" id="usG-SE-MT2"/>
+                                    <outlet property="delegate" destination="xKO-8D-FLY" id="6uV-xE-76D"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="grH-5C-SG3" secondAttribute="centerX" id="2Yg-nn-Yqy"/>
+                            <constraint firstItem="grH-5C-SG3" firstAttribute="top" secondItem="q4G-CU-svQ" secondAttribute="bottom" id="VmO-3a-bPu"/>
+                            <constraint firstItem="aoU-rc-XKc" firstAttribute="top" secondItem="grH-5C-SG3" secondAttribute="bottom" constant="110" id="VyY-Yx-2ed"/>
+                            <constraint firstAttribute="centerX" secondItem="aoU-rc-XKc" secondAttribute="centerX" constant="1.5" id="yVd-kf-OOW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Double" image="doubleicon" id="Ok7-eS-Qll"/>
+                    <connections>
+                        <outlet property="doublePicker" destination="grH-5C-SG3" id="4pZ-bA-ETQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szR-ff-1fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="515"/>
+            <point key="canvasLocation" x="108" y="462"/>
         </scene>
     </scenes>
     <resources>
