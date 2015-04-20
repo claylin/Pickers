@@ -74,10 +74,46 @@ class CustomPickerViewController: UIViewController, UIPickerViewDelegate, UIPick
                 win = true
             }
         }
-        winLabel.text = win ? "WINNER!" : " "
+        
+        if crunchSoundID == 0 {
+            let soundURL = NSBundle.mainBundle().URLForResource(
+            "crunch", withExtension: "wav")! as CFURLRef
+            AudioServicesCreateSystemSoundID(soundURL, &crunchSoundID)
+        }
+        AudioServicesPlaySystemSound(crunchSoundID)
+        
+        if win {
+            dispatch_after(dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(0.5 * Double(NSEC_PER_SEC))),
+                dispatch_get_main_queue()) {
+                    self.playWinSound()
+                }
+        } else {
+            dispatch_after(dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(0.5 * Double(NSEC_PER_SEC))),
+                dispatch_get_main_queue()) {
+                    self.showButton()
+                }
+        }
+        button.hidden = true
+        winLabel.text = " " // Note the space between the quotes
     }
 
     func showButton() {
         button.hidden = false
+    }
+    
+    func playWinSound() {
+        if winSoundID == 0 {
+            let soundURL = NSBundle.mainBundle().URLForResource("win", withExtension: "wav")! as CFURLRef
+            AudioServicesCreateSystemSoundID(soundURL, &winSoundID)
+        }
+        AudioServicesPlaySystemSound(winSoundID)
+        winLabel.text = "WINNER!"
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        self.showButton()
+        }
     }
 }
